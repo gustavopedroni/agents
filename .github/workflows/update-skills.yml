@@ -1,0 +1,36 @@
+# Checa diariamente se as skills de terceiros mudaram na origem e abre um PR com o lock atualizado.
+# Após o merge: git pull && ./install.sh
+name: update-skills
+
+on:
+  schedule:
+    - cron: "0 9 * * *" # 06:00 BRT
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: npx skills update
+        env:
+          GITHUB_TOKEN: ${{ github.token }} # evita rate limit da API do GitHub
+        run: |
+          mkdir -p ~/.agents
+          ln -s "$PWD/skills-lock.json" ~/.agents/.skill-lock.json
+          npx -y skills update -g -y
+
+      - uses: peter-evans/create-pull-request@v8
+        with:
+          branch: bot/update-skills
+          delete-branch: true
+          commit-message: "chore(skills): atualizar skills de terceiros"
+          title: "chore(skills): atualizar skills de terceiros"
+          body: |
+            Skills com `skillFolderHash` alterado no diff mudaram na origem.
+            Após o merge, aplique com `git pull && ./install.sh`.
