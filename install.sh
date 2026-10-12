@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # Instala skills, plugins (MCPs) e settings deste repo para o usuário atual. Idempotente.
-# uso: curl -fsSL https://raw.githubusercontent.com/gstvpedroni/agents/main/install.sh | bash
+# uso: curl -fsSL https://raw.githubusercontent.com/gustavopedroni/agents/main/install.sh | bash
 #   ou: ./install.sh (a partir do clone)
 set -euo pipefail
 
 main() { # wrapper: com curl|bash, o bash lê o script inteiro antes de executar
-  REPO_URL="${AGENTS_REPO_URL:-https://github.com/gstvpedroni/agents.git}"
+  REPO_URL="${AGENTS_REPO_URL:-https://github.com/gustavopedroni/agents.git}"
   for c in git npx jq; do command -v "$c" >/dev/null || { echo "falta: $c" >&2; exit 1; }; done
 
   DIR="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" && pwd)"
