@@ -5,7 +5,7 @@ Backup das minhas configs de agentes de IA (hoje: Claude Code).
 ## Instalar tudo
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/gstvpedroni/agents/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/gustavopedroni/agents/main/install.sh | bash
 ```
 
 Clona o repo em `~/.local/share/agents` (mude com `AGENTS_DIR=...`) e instala:
