@@ -8,7 +8,23 @@
       "skillPath": "skills/find-skills/SKILL.md",
       "skillFolderHash": "76a98a285cb0434f3d39e1a873823556330e398b",
       "installedAt": "2026-09-29T16:20:58.889Z",
-      "updatedAt": "2026-09-29T16:35:00.080Z"
+      "updatedAt": "2026-10-12T17:58:35.997Z"
+    },
+    "jira-code-review": {
+      "source": "/home/gstvpedroni/Projects/gstvpedroni/agents",
+      "sourceType": "local",
+      "sourceUrl": "/home/gstvpedroni/Projects/gstvpedroni/agents",
+      "skillFolderHash": "69acc50df9d8bf6f67c835c4676e8cad8b0aa9e7f985dd8c047ad0ce41c29d8a",
+      "installedAt": "2026-10-12T17:59:15.803Z",
+      "updatedAt": "2026-10-12T17:59:15.803Z"
+    },
+    "jira-create-issue": {
+      "source": "/home/gstvpedroni/Projects/gstvpedroni/agents",
+      "sourceType": "local",
+      "sourceUrl": "/home/gstvpedroni/Projects/gstvpedroni/agents",
+      "skillFolderHash": "d0090120e743b8f32536f3c7a133bb4fe9a6c1d9051a89f2d44646c513e5afea",
+      "installedAt": "2026-10-12T17:59:15.805Z",
+      "updatedAt": "2026-10-12T17:59:15.805Z"
     }
   },
   "dismissed": {
