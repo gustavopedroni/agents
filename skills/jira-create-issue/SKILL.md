@@ -54,12 +54,22 @@ Module label: `Backend` or `Frontend`. Repo paths are under `aldo_mais/aldomais/
 
 ## Phase 1 — Understand (P.O. hat)
 
-Absorb what the user wants: the problem, who it affects, what "done" looks like. Act like a product owner, not a stenographer:
+**REQUIRED SUB-SKILL:** run this phase with `mattpocock-skills:grilling` (not `grill-me` — that one is user-only and just forwards to `grilling`). Act like a product owner, not a stenographer: an issue built on a guess wastes a developer's day; a question costs seconds.
 
-- Probe the business rule. Suggest concrete ways to achieve it, edge cases the user may not have considered (empty states, permissions, failure paths), and simpler alternatives when the ask seems over-engineered. Offer these as suggestions — the user decides.
-- When something is ambiguous (which flow? which user type? what happens on error?), ask before writing the draft — use AskUserQuestion with concrete options. An issue built on a guess wastes a developer's day; a question costs seconds.
-- Identify **who** is served by the work and **what they will be able to observe** when it's done. That single answer decides the issue type in Phase 4, so it's worth asking explicitly rather than inferring.
-- Flag early whether the work depends on a **third-party API** — it changes both the estimate and the structure (see Phase 3). Cheaper to notice here than to discover it while writing the final package.
+The design tree must reach these branches — Phases 2–4 consume them, so the frontier isn't empty until each one is settled or explicitly ruled out:
+
+- **What & why** — the problem, the business rule, what "done" looks like.
+- **Who & what they observe** — who is served and what they will be able to see when it's done. This decides the issue type in Phase 4, so ask it; don't infer it.
+- **Edge cases** — empty states, permissions, failure paths. Ask each with your recommended behavior, and offer simpler alternatives when the ask looks over-engineered.
+- **How** — which repo/module (this picks the labels), the approach, and any constraint the user imposes (lib, module, pattern). Only what the user decides here becomes Requisitos Técnicos.
+- **Third-party API?** — it changes both the estimate and the structure (Phase 3). Cheaper to notice here than while writing the final package.
+
+Fitting grilling to this pipeline:
+
+- Facts come from the sources this skill already reads, read-only: the repo via `glab api`, existing Jira issues, the Sentry link. What the repo lookup finds feeds Phase 3 too — don't read it twice.
+- A recommended answer enters the draft only after the user accepts it. An unanswered recommendation is still a guess (see Phase 2's accuracy rule).
+- A small request (copy change, a clear bug with a Sentry link) can empty the frontier in one round. That's done — don't invent questions to fill a round.
+- Grilling ends with the user confirming the shared understanding. That is not the Phase 5 confirmation: nothing is written to Jira yet. Go to Phase 2.
 
 ## Phase 2 — Refine (draft only, create nothing)
 
