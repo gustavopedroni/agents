@@ -8,7 +8,8 @@
       "skillPath": "skills/find-skills/SKILL.md",
       "skillFolderHash": "76a98a285cb0434f3d39e1a873823556330e398b",
       "installedAt": "2026-09-29T16:20:58.889Z",
-      "updatedAt": "2026-10-12T17:58:35.997Z"
+      "updatedAt": "2026-11-21T16:29:49.409Z",
+      "commit": "57217cf86ba38148a57af9e90d14a4c049558330"
     },
     "jira-code-review": {
       "source": "/home/gstvpedroni/Projects/gstvpedroni/agents",
